@@ -6,6 +6,11 @@ $(document).ready(function(){
         
     });
 
+    const levelsContainer =$("#levelsDatas");
+    if (levelsContainer.length > 0){
+        getLevels(levelsContainer);
+    }
+
     function submitlevels(form){
         const levelVal=$(form).find("#ClasId").val();
         const nivelData= {
@@ -42,6 +47,9 @@ $(document).ready(function(){
 
     }
 
+    function getLevels($container){}
+
+
    
     // toast("Hola", "success", 5000, "top-end");
     // setTimeout(()=>{
@@ -68,4 +76,15 @@ $(document).ready(function(){
     }
 
 
+    const fName = "Dante";
+    const numOne= 1;
+    const LName ="Rodriguez";
+    const numTwo = "2";
+    const numTre= 3;
+
+    let operation;
+
+    operation = fName + LName 
+
+    toast(operation, "info", 8000, "center")
 });
