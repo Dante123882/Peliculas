@@ -42,21 +42,62 @@ $(document).ready(function(){
                 toast(error, "error",5000,"top-center")
                 console.error("Error en la petición:", error);
             },
-            // complete:function()
-            });
-
+        });
     }
 
-    function getLevels($container){}
+    function submitMovies(form) {
+        const formData = new FormData(form[0]);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        }); // <-- CORRECCIÓN: El '}' estaba mal puesto aquí.
+
+        console.log("Datos de película (JSON):", jsonData);
+        
+        // --- ¡ACCIÓN FALTANTE! ---
+        // Aquí necesitas una llamada $.ajax() para ENVIAR 'jsonData'
+        // a tu API de películas, similar a como lo haces en submitlevels.
+        /*
+        $.ajax({
+            url: "http://localhost:5254/api/Peliculas/RegistrarPelicula", // URL de ejemplo
+            type: "POST",
+            headers: { Authorization: "Bearer " + myApiToken },
+            contentType: "application/json",
+            data: JSON.stringify(jsonData),
+            success: function(respuesta) {
+                toast(respuesta.message, "success", 5000, "top-end");
+            },
+            error: function(xhr, estado, error) {
+                toast(error, "error", 5000, "top-center");
+            }
+        });
+        */
+    }
 
 
-   
-    // toast("Hola", "success", 5000, "top-end");
-    // setTimeout(()=>{
-    //     toast ("Adios","error",5000, "top-start");
-    // }),6000
-    
-    function toast(titleToast,iconToast,timeToast,positionToast) {
+    function getLevels($container) {
+        $.ajax({
+            url: "http://localhost:5254/api/Clasificacion/ObtenerClasificaciones",
+            type: "GET",
+            headers: {
+                Authorization: "Bearer " + myApiToken,
+            },
+            success: function(respuesta) {
+                console.log(respuesta.data[0]);
+                $container.empty(); 
+                    $($container).append(
+                        respuesta.data.map((level)=>{
+                        return `<div>${level.ClasificacionDesc}</div>`;
+                        })
+                    );
+                    
+                }
+             }
+
+    /**
+     * Función de utilidad para mostrar notificaciones (toast).
+     */
+    function toast(titleToast, iconToast, timeToast, positionToast) {
         const Toast = Swal.mixin({
             toast: true,
             position: positionToast,
