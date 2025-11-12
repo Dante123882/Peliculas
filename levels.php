@@ -20,7 +20,7 @@
 <body class="container container-fluid">
 
     <section class="d-grid" heigh="1000vh">
-        <form class="card" id="formInsertMovies">
+        <form class="card" id="formInsertLevels">
             <div class="card-body">
                 <h5 class="card-title text-center">Agregar Clasficaciones</h5>
                 <hr>
