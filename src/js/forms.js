@@ -5,7 +5,8 @@ $(document).ready(function () {
 
         switch (actionForm) {
             case "login":
-                login(this);
+                alert("switch login")
+                // login(this);
                 break;
             case "insertLevel":
                 insertLevel(this);
@@ -34,14 +35,6 @@ $(document).ready(function () {
             error: function (xhr, status, error, response) {
                 // const errorData = xhr.responseJSON.json || {};
                 alert("Error");
-                toast({
-                    icon: "error",
-                    title: `Error al intentar iniciar sesión. <br><br> ${errorData.message || "Error desconocido"} <br> Código ${xhr.status}`,
-                    time: 5000,
-                    position: "center",
-                });
-                console.error("--- Este es el error resultante de ajax ---");
-                console.error(xhr);
             },
         });
     }
