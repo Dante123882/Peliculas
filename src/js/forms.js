@@ -5,8 +5,7 @@ $(document).ready(function () {
 
         switch (actionForm) {
             case "login":
-                alert("switch login")
-                // login(this);
+                login(this);
                 break;
             case "insertLevel":
                 insertLevel(this);
@@ -22,19 +21,35 @@ $(document).ready(function () {
         const jsonData = Object.fromEntries(formData.entries());
 
         $.ajax({
-            url: "../php/login.php",
+            url: "php/login.php",
             type: "POST",
             data: JSON.stringify(jsonData),
             processData: false,
             contentType: "application/json",
             dataType: "json",
             success: function (response) {
-                console.log(response);
-                alert("correcto");
+                $(form)[0].reset();
+
+                toast({
+                    icon: "success",
+                    title: `Se inicio sesion correctamente <br> Bienvenido ${response.fullname}`,
+                    time: 2000,
+                    position: "top",
+                    onClose: function () {
+                        window.location.href = "PRUEBA.php";
+                    },
+                });
             },
             error: function (xhr, status, error, response) {
-                // const errorData = xhr.responseJSON.json || {};
-                alert("Error");
+                const errorData = xhr.responseJSON || {};
+                toast({
+                    icon: "error",
+                    title: `Error al intentar iniciar sesión. <br><br> ${errorData.message || "Error desconocido"} <br> Código ${xhr.status}`,
+                    time: 5000,
+                    position: "center",
+                });
+                console.error("--- Este es el error resultante de ajax ---");
+                console.error(xhr);
             },
         });
     }
@@ -62,7 +77,7 @@ $(document).ready(function () {
                 });
             },
             error: function (xhr, status, error, response) {
-                const errorData = xhr.responseJSON.json || {};
+                const errorData = xhr.responseJSON|| {};
                 toast({
                     icon: "error",
                     title: `Error al intentar registrar la clasificacion. <br><br> ${errorData.message || "Error desconocido"} <br> Código ${xhr.status}`,

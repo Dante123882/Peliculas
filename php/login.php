@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $url = "http://localhost:5254/api/Auth/Token";
-    $data = array( "usuario" => $userPOST,"contrasena" => $passPOST);
+    $data = ["usuario" => $userPOST,"contrasena" => $passPOST];
     $jsonData = json_encode($data);
 
     $ch = curl_init($url);
@@ -73,14 +73,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         setcookie("token", $token, time() + $expTime, "/", "", false, true);
 
-        $_SEESSION['username'] = strtolower($payload['sub'] ?? 'sin_usuario');
+        $_SEESSION['usuario'] = strtolower($payload['sub'] ?? 'sin_usuario');
         $_SEESSION['fullname'] = $payload['fullname'] ?? 'sin_nombre';
         $_SEESSION['role'] = strtolower($payload['role'] ?? 'sin_rol');
         
         http_response_code(200);
         echo json_encode([
             "success" => true,
-            "status" => $200,
+            "status" => 200,
             "fullname" => $payload['fullname'] ?? null,
             "json" => $json
         ]);

@@ -1,0 +1,80 @@
+.perfil-container {
+    background-color: var(--color-superficie);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-caja);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--color-borde);
+    text-align: center;
+    position: relative;
+    margin: 50px auto;
+}
+
+.perfil-container h2 {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.perfil-foto {
+    margin-bottom: 25px;
+}
+
+.perfil-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--color-borde);
+    object-fit: cover;
+}
+
+.perfil-info {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.perfil-info label {
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+}
+
+.perfil-info p {
+    font-size: 1.2rem;
+    color: var(--color-texto-principal);
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--color-fondo);
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+}
+
+.btn-editar-perfil {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.btn-editar-perfil:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.btn-volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--color-texto-secundario);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.btn-volver:hover {
+    color: var(--color-primario);
+}

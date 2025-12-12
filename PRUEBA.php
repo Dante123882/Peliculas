@@ -1,12 +1,12 @@
 <?php
     include 'php/components.php';
-    include 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" data-mdb-theme="light">
     <head>
         <?php headContent("Administracion de Peliculas"); ?>
-        <link rel="stylesheet" href="static/css/nav.css">
+        <link rel="stylesheet" href="static/css/dash.css">
+        <link rel="stylesheet" href="src/css/main.css">
     </head>
     <body class="p-3">
         <nav class="nav-session mb-3">

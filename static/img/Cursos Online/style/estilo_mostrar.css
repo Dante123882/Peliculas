@@ -1,0 +1,160 @@
+/* --- Importar Base (Opcional si no usas base.css) --- */
+@import url('base.css');
+
+body {
+    align-items: flex-start; /* Alinea el contenido arriba */
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--color-superficie);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-caja);
+    border: 1px solid var(--color-borde);
+    margin: 50px auto; /* 50px de espacio arriba/abajo, centrado */
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 20px;
+}
+
+.header h2 {
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.btn-nuevo {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-nuevo:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* --- Estilo de la Tabla --- */
+.table-container {
+    overflow-x: auto; /* Para responsividad en móviles */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+thead {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+th {
+    font-weight: 500;
+    color: var(--color-texto-principal);
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: rgba(58, 124, 253, 0.1);
+}
+
+/* --- Botones de Acción en la Tabla --- */
+td:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar, .btn-eliminar {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+.btn-editar {
+    background-color: #5c636a;
+}
+.btn-editar:hover {
+    background-color: #4a4f54;
+}
+
+.btn-eliminar {
+    background-color: var(--color-error);
+}
+.btn-eliminar:hover {
+    background-color: var(--color-error-hover);
+}
+
+
+
+/* --- Mensaje de Tabla Vacía --- */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+.empty-state-text {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+}
+
+/* Agrega esto al final del archivo */
+.btn-logout {
+    padding: 10px 18px;
+    background-color: var(--color-error);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: var(--color-error-hover);
+}
+
+/* Modifica el .header para que quepan los botones */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 20px;
+    flex-wrap: wrap; /* Para que en pantallas chicas no se rompa */
+}
+
+.header h2 {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.header div {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+}

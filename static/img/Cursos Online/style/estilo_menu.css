@@ -1,0 +1,57 @@
+/* Quitamos .header-menu, .bienvenido, y .btn-logout 
+  porque ahora están en estilo_base.css
+*/
+
+.menu-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    
+    /* Añadimos margen para centrarlo en la página */
+    max-width: 900px;
+    margin: 50px auto; /* 50px de espacio arriba/abajo, centrado auto */
+    padding: 20px;
+}
+
+/* --- Botones del Menú (Tarjetas) --- */
+.menu-button {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-caja);
+}
+
+.menu-button:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+    box-shadow: 0px 12px 28px rgba(58, 124, 253, 0.2);
+}
+
+.menu-button img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-borde);
+    transition: border-color 0.3s ease;
+}
+
+.menu-button:hover img {
+    border-color: var(--color-primario);
+}
+
+.menu-button span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}

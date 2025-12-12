@@ -1,43 +1,82 @@
+<?php
+    include 'php/components.php';
+    include 'php/session.php';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-mdb-theme="light">
+    <head>
+        <?php headContent("Administracion de Peliculas"); ?>
+        <link rel="stylesheet" href="static/css/nav.css">
+    </head>
+    <body class="p-3">
+        <nav class="nav-session mb-3">
+            <div>
+                <img src="static/img/utc_logo.webp" alt="🐦‍🔥🐦🐌">
+                <span>Peliculas</span>
+            </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="data:,">
+            <a href="php/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
 
-    <title>Movies</title>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="src/style.css">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-</head>
-
-<body class="container container-fluid">
-
-    <section class="d-grid" heigh="1000vh">
-        <form class="card" id="formInsertLevels">
+        <form action="insertLevel" class="card card-450 mb-3" id="levelsMovie">
+            <div class="card-header text-center">
+                <h3>Registrar Clasificaciones</h3>
+            </div>
             <div class="card-body">
-                <h5 class="card-title text-center">Agregar Clasficaciones</h5>
-                <hr>
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text"  class="form-control" id="ClasId" name="ClasId"/>
-                    <label class="form-label" id="ClasId">Clasificacion:</label>
+                <div class="form-outline" data-mdb-input-init>
+                    <input type="text" id="description" name="description" class="form-control" />
+                    <label class="form-label" for="description">Descripcion:</label>
                 </div>
-                <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block" id="submit">Sign in</button>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-detail btn-block">
+                    Agregar<i class="fas fa-plus-circle ms-2"></i>
+                </button>
             </div>
         </form>
-    </section>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="src/main.js"></script>
+        <div class="card">
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="levelsTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>Descripcion 1</td>
+                            <td><button class="btn btn-icon btn-detail"><i class="fa-solid fa-pen"></i></button><button class="btn btn-icon btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Descripcion 2</td>
+                            <td><button>2</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Descripcion 3</td>
+                            <td><button>3</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Descripcion 4</td>
+                            <td><button>4</button></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Descripcion 5</td>
+                            <td><button>5</button></td>
+                        </tr>
 
-</body>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
+        <?php footerScripts(); ?>
+    </body>
 </html>

@@ -1,0 +1,89 @@
+/* --- Importar Base (Opcional si no usas base.css) --- */
+@import url('base.css');
+
+/* --- Estilo del Formulario (similar a registrar) --- */
+form {
+    background-color: var(--color-superficie);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-caja);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--color-borde);
+    margin: 50px auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+}
+
+/* --- Divisiones de campos --- */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    color: var(--color-texto-principal);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(58, 124, 253, 0.25);
+}
+
+/* --- Contenedor de Acciones (Guardar/Cancelar) --- */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions button, .form-actions a {
+    flex-grow: 1; /* Hace que ambos ocupen el mismo espacio */
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.form-actions button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+}
+.form-actions button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.form-actions a.button-link {
+    background-color: transparent;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-borde);
+}
+.form-actions a.button-link:hover {
+    background-color: var(--color-superficie);
+    border-color: var(--color-texto-secundario);
+    color: var(--color-texto-principal);
+}

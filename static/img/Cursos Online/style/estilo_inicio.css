@@ -1,0 +1,227 @@
+/* Usamos las variables de estilo_base.css */
+
+/* ==================
+   NAVBAR (Estilo Udemy)
+   ================== */
+
+body {
+    /* Quitamos el padding-top del 'estilo_base.css' si lo tienes */
+    padding-top: 0; 
+}
+
+.navbar-landing {
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-superficie);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1400px; /* Ancho completo */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand-landing {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    text-decoration: none;
+}
+
+.search-bar-landing {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.search-bar-landing input {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 30px; /* Redondeado */
+    color: var(--color-texto-principal);
+    font-size: 1rem;
+}
+.search-bar-landing input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.navbar-links-landing {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navbar-welcome-landing {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+.navbar-link-landing, .navbar-link-cta, .navbar-link-register, .navbar-link-logout {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.navbar-link-landing {
+    color: var(--color-texto-secundario);
+}
+.navbar-link-landing:hover {
+    color: var(--color-primario);
+}
+.navbar-link-cta {
+    background-color: var(--color-primario);
+    color: white;
+}
+.navbar-link-cta:hover {
+    background-color: var(--color-primario-hover);
+}
+.navbar-link-register {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+}
+.navbar-link-logout {
+    background-color: var(--color-error);
+    color: white;
+}
+
+
+/* ==================
+   HERO SECTION (La promo)
+   ================== */
+
+.hero-section {
+    background-color: var(--color-superficie);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+}
+.hero-section.logged-in {
+    background-color: var(--color-primario); /* Fondo azul al loguearse */
+}
+.hero-content {
+    flex-basis: 50%;
+}
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+}
+.hero-button {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.hero-section.logged-in .hero-button {
+    background-color: var(--color-fondo);
+}
+.hero-image {
+    flex-basis: 50%;
+}
+.hero-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+/* ==================
+   MENÚ DE APP (Logueado)
+   ================== */
+
+.menu-container-landing {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.menu-button-landing {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-caja);
+}
+.menu-button-landing:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primario);
+}
+.menu-button-landing img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.menu-button-landing span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* ==================
+   GRUPO DE USUARIO (Foto + Saludo)
+   ================== */
+
+.navbar-user-group {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre la foto y el texto */
+    margin-right: 15px; /* Espacio antes del link "Mi Perfil" */
+}
+
+.navbar-profile-pic {
+    display: block;
+    width: 40px;  /* Tamaño pequeño para la navbar */
+    height: 40px;
+    border-radius: 50%; /* La hace redonda */
+    overflow: hidden; /* Esconde las esquinas de la imagen */
+    border: 2px solid var(--color-borde);
+    transition: border-color 0.3s;
+}
+
+.navbar-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el círculo */
+}
+
+.navbar-profile-pic:hover {
+    border-color: var(--color-primario);
+}
+
+.navbar-welcome-landing {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
